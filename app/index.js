@@ -23,17 +23,10 @@ app.post('/', function (req, res){
   var zip = req.body.zip;
   var url = 'http://api.wunderground.com/api/536b90dc843299c1/conditions/q/' + zip + '.json';
   var temp;
+  request( url, function( error, response, body){
+    body = JSON.parse(body);
+    temp = body.current_observation.temp_f;
 
-  function getTemp( url, cb){
-    request( url, function( error, response, body){
-        body = JSON.parse(body);
-        temp = body.current_observation.temp_f;
-        cb(temp);
-      });
-    }
-
-  getTemp( url, function(x){
-    temp =  x;
     console.log(temp);
     var tempColor;
     temp = parseInt(temp);
