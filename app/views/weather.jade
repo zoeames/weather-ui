@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Weather
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h2 
+      a(href="/") BACK
+    #temp #{temp}&deg; F
+    #zip Zip Code: #{zip}
+    #thermometer
+     - var tempheight = temp *2
+     #temp(style="width:50px; height: #{tempheight}px; background-color:#{tempColor};")
