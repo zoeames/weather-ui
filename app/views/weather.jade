@@ -10,5 +10,7 @@ html
     #temp #{temp}&deg; F
     #zip Zip Code: #{zip}
     #thermometer
-     - var tempheight = temp *2
-     #temp(style="width:50px; height: #{tempheight}px; background-color:#{tempColor};")
+      - var tempheight = temp *2
+      #pos25
+
+        #temperature(style="width:50px; height: #{tempheight}px; background-color:#{tempColor};")
